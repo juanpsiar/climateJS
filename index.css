@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.container{
+    display: flex;
+}
+
+.search-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.results-section{
+    display:flex; 
+} 
