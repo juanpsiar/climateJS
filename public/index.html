@@ -13,40 +13,40 @@
     <title>WeatherApp</title>
   </head>
   <body>
-    <section class="container">
+    <!--<section class="search">
       <div class="search-section">
-        <input type="text" placeholder="Search for places " />
-        <div><img src="../dist/assets/icons/Shower.png" /></div>
-        <label>15 °C</label>
-        <label>Shower</label>
-        <label>Today - Sunday 22 Aug</label>
-        <label id="city"></label>
+        
       </div>
       <div class="results-section">
-        <div>
-          <label>Tomorrow</label>
-          <div>
-            <img src="../dist/assets/icons/HeavyCloud.png" />
-          </div>
-          <label>16°C</label>
-        </div>
-        <div>
-          <label>Tomorrow</label>
-          <div><img src="../dist/assets/icons/Hail.png" /></div>
-          <label>17°C</label>
-        </div>
-        <div>
-          <label>Tomorrow</label>
-          <div><img src="../dist/assets/icons/HeavyRain.png" /></div>
-          <label>18°C</label>
-        </div>
-        <div>
-          <label>Tomorrow</label>
-          <div><img src="../dist/assets/icons/Cloud-background.png" /></div>
-          <label>19°C</label>
-        </div>
+       
       </div>
-    </section>
+    </section>-->
+    <section class="column">
+      <header class="column__header">
+           <button class="column__header__btn" id="search">Seach for places</button>
+           <button  class="column__header__circle" id="gps"></button>
+      </header>
+      <figure class="column__img">
+          <img src="assets/icons/Shower.png" alt="">
+      </figure>
+      <h1>15<span>℃</span></h1>
+      <h3>shower</h3>
+      <div class="column__date">
+          <p>today</p>
+          <span></span>
+          <p>Fri, 5 Jun</p>
+      </div>
+      <section class="search" id="modal">
+        <span class="search__close">X</span>
+        <div class="search__input">
+          <input type="text" placeholder="search location">
+          <button>Search</button>
+        </div>
+        <button class="search__button">London</button>
+        <button class="search__button">Barcelona</button>
+        <button class="search__button">Long Beach</button>
+      </section>
+    </section> 
   </body>
   <script src="index.js"></script>
 </html>
