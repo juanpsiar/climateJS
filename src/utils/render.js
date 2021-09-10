@@ -1,18 +1,20 @@
 
 
-
 function render(json) {
-    const $columnCity = document.querySelector('#climateName');
-    $columnCity.textContent = json.name;
+    const $columnClimate = document.querySelector('#climateName');
+    $columnClimate.textContent = json.weather[0].main;
 
     const $columnTemp = document.querySelector('#columnTemp');
-    const temp = getTemp(json.main.temp);
+    const temp =Math.floor(json.main.temp )+ '℃';
     console.log(temp);
     $columnTemp.textContent = temp;
-}
-function getTemp(num) {
-   const temp = Math.round(num - 273.15);
-   return temp;
+    const $columnIcon = document.querySelector('#columnIcon');
+    const img = $columnIcon.firstElementChild;
+    img.src = `https://openweathermap.org/img/wn/${json.weather[0].icon}@4x.png`;
+    console.log(img);
+   
+    const columCity = document.querySelector('#city');
+    columCity.innerHTML= json.name;
 }
  
 export default render;

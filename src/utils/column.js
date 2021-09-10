@@ -1,5 +1,5 @@
 let $search = document.querySelector('#search');
-let $modal = document.querySelector('#modal');
+export let $modal = document.querySelector('#modal');
 let $close = $modal.querySelector('.search__close');
 
 $search.addEventListener('click', ()=>{
