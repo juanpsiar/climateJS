@@ -1,0 +1,39 @@
+.card{
+    width: 120px;
+    height: 177px;
+    background-color: #1E213A;
+    margin-left: 73px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    &__date{
+        width: auto;
+        height: 19px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+    &__image{
+        width: 56.44px;
+        height: 62px;
+        background-color: aqua;
+        margin-bottom: 31px;
+    }
+    &__temp{
+        width: 63px;
+        height: 19px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.stadistic{
+    width: 328px;
+    height: 204px;
+    margin-left: 50px;
+    background-color:  #1E213A;
+    &__title{
+        width: auto;
+        height: 19px;
+    }
+
+}

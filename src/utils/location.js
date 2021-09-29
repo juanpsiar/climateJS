@@ -1,3 +1,5 @@
+//import { callApi} from './fetchData';
+
 let coordinates;
 
 const $gps = document.querySelector('#gps');
@@ -17,6 +19,8 @@ function getLocation(){
 
 function setData(dataCoord){
   coordinates = dataCoord;
+  console.log(coordinates);
+  callApi();
 };
 
 function showPosition(position){
@@ -26,3 +30,5 @@ function showPosition(position){
   };
   setData(cords);
 };
+
+
