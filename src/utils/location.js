@@ -1,11 +1,20 @@
-import render from './render';
+import render from './render.js';
+//globals variables
 
+let weatherData;
 let coordinates;
+let objetApp = {}
+//******************************** */
+
+
+
+
 const apiURL = 'https://www.metaweather.com/api/location/';
 
 const $gps = document.querySelector('#gps');
 
 const locationUser = navigator.geolocation;
+
 
 $gps.addEventListener('click', getLocation);
 
@@ -16,15 +25,16 @@ const getDataAPI = async (url) => {
   try {
     const response = await window.fetch(url);
     const dataJson = await response.json();
-    console.log({ dataJson });
+ 
     if (dataJson[0].woeid) {
       let renderDataWeather = getDataAPI(`${apiURL}${dataJson[0].woeid}`);
-      console.log({ renderDataWeather });
-    } else {
-      return dataJson;
+    } else {   
+      console.log({ dataJson });
+     render(dataJson);
+     debugger;
     }
   } catch (error) {
-    console.log(error);
+    console.log('error',error);
   }
 };
 
@@ -34,18 +44,19 @@ const getWeatherData = (codeWoeid) => {};
 function getLocation() {
   if (locationUser) {
     locationUser.getCurrentPosition(showPosition);
-    console.log('location', coordinates);
   } else {
     return 'Geolocation is not supported by this browser.';
   }
-  if (coordinates) {
+  if (objetApp.coordinates) {
+    let coordinates = objetApp.coordinates;
+
     const urlGetWoeid = `${apiURL}search/?lattlong=${coordinates.latitude},${coordinates.longitude}`;
-    getDataAPI(urlGetWoeid)[0].then((data) => console.log({ data }));
+    getDataAPI(urlGetWoeid);
   }
 }
 
-function setData(dataCoord) {
-  coordinates = dataCoord;
+function setData(name, value) {
+  objetApp[name]=value;  
 }
 
 function showPosition(position) {
@@ -53,7 +64,6 @@ function showPosition(position) {
     latitude: position.coords.latitude,
     longitude: position.coords.longitude,
   };
-  setData(cords);
+  setData('coordinates', cords);
 }
-
 export default getLocation();
