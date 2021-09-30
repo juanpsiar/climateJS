@@ -1,18 +1,18 @@
-$color-primary: #1E213A;
-$color-secundary: #100E1D;
-$color-grey:  #6E707A;
+$color-primary: #1e213a;
+$color-secundary: #100e1d;
+$color-grey: #6e707a;
 
-$font:  'Raleway', sans-serif;
+$font: 'Raleway', sans-serif;
 
-@function porcentaje($width){
-    @return  $width * 100%/1440;
- };
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: $font;
+@function porcentaje($width) {
+  @return $width * 100%/1440;
 }
-body{
-    display: flex;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: $font;
+}
+body {
+  display: flex;
 }
