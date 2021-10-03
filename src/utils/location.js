@@ -1,3 +1,4 @@
+import { callApi } from './fetchData.js';
 import render from './render.js';
 //globals variables
 
@@ -25,14 +26,15 @@ const getDataAPI = async (url) => {
   try {
     const response = await window.fetch(url);
     const dataJson = await response.json();
+    callApi(dataJson[0].woeid)
  
-    if (dataJson[0].woeid) {
+    /*if (dataJson[0].woeid) {
       let renderDataWeather = getDataAPI(`${apiURL}${dataJson[0].woeid}`);
     } else {   
       console.log({ dataJson });
      render(dataJson);
      debugger;
-    }
+    }*/
   } catch (error) {
     console.log('error',error);
   }
